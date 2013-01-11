@@ -6,11 +6,11 @@ You can read the tutorial on my blog http://www.gianlucaguarini.com/blog/nodejs-
 
 
  
- Version:     1.0
- Author:      Gianluca Guarini
- Contact:     gianluca.guarini@gmail.com
- Website:     http://www.gianlucaguarini.com/
- Twitter:     @gianlucaguarini
+ Version:     1.0<br>
+ Author:      Gianluca Guarini<br>
+ Contact:     gianluca.guarini@gmail.com<br>
+ Website:     http://www.gianlucaguarini.com/<br>
+ Twitter:     @gianlucaguarini<br>
  
  Copyright (c) 2013 Gianluca Guarini
  
