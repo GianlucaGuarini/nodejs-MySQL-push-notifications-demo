@@ -4,7 +4,7 @@ nodejs-MySQL-push-notifications-demo
 Node server that is able to read from a MySql database and then stream those data via websocket to many client connected on the same page. 
 You can read the tutorial on my blog http://www.gianlucaguarini.com/blog/nodejs-and-a-simple-push-notification-server/
 
-/**
+/*
  *
  * Version:     1.0
  * Author:      Gianluca Guarini
