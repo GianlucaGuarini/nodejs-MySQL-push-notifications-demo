@@ -6,7 +6,7 @@ You can read the tutorial on my blog http://www.gianlucaguarini.com/blog/nodejs-
 
 
  
- Version:     1.0<br>
+ Version:     1.1<br>
  Author:      Gianluca Guarini<br>
  Contact:     gianluca.guarini@gmail.com<br>
  Website:     http://www.gianlucaguarini.com/<br>

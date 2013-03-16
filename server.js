@@ -48,16 +48,12 @@ var pollingLoop = function () {
 	var query = connection.query('SELECT * FROM users'),
 		users = []; // this array will contain the result of our db query
 
-	// resuming the connection that is paused each loop
-	connection.resume();
-
 	// setting the query listeners
 	query
 	.on('error', function(err) {
 		// Handle error, and 'end' event will be emitted after this as well
 		console.log( err );
 		updateSockets( err );
-		
 	})
 	.on('result', function( user ) {
 		// it fills our array looping on each user row inside the db
@@ -67,7 +63,6 @@ var pollingLoop = function () {
 		// loop on itself only if there are sockets still connected
 		if(connectionsArray.length) {
 			pollingTimer = setTimeout( pollingLoop, POLLING_INTERVAL );
-			connection.pause();
 
 			updateSockets({users:users});
 		}
