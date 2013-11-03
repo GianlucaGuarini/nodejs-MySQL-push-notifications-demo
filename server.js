@@ -7,7 +7,8 @@ var app					= require('http').createServer(handler),
 		host		: 'localhost',
 		user		: 'root',
 		password	: 'root',
-		database	: 'nodejs'
+		database	: 'nodejs',
+		port		: 3306
 	}),
 	POLLING_INTERVAL = 3000,
 	pollingTimer;

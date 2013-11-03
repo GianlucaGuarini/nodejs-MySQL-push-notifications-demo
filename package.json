@@ -1,12 +1,11 @@
 {
   "name": "nodejs-MySQL-push-notifications-demo",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "nodejs-MySQL-push-notifications-demo",
   "main": "server.js",
   "dependencies": {
-    "generic-pool": "~2.0.3",
-    "mysql": "~2.0.0-alpha7",
-    "socket.io": "~0.9.13"
+    "mysql": "~2.0.0-alpha9",
+    "socket.io": "~0.9.16"
   },
   "devDependencies": {},
   "scripts": {
@@ -18,7 +17,9 @@
     "url": "git://github.com/GianlucaGuarini/nodejs-MySQL-push-notifications-demo.git"
   },
   "author": "Gianluca Guarini",
-  "license": "BSD",
-  "readmeFilename": "README.md",
-  "gitHead": "40afdbead6113a6e86a1e754bba4a1baf4864c9a"
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/GianlucaGuarini/nodejs-MySQL-push-notifications-demo/issues"
+  },
+  "homepage": "https://github.com/GianlucaGuarini/nodejs-MySQL-push-notifications-demo"
 }
