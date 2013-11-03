@@ -26,28 +26,28 @@
 		</style>
 	</head>
 	<body>
-		<time></time>
-		<div id="container">Loading ...</div>
-	<script src="socket.io/socket.io.js"></script>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script>
+        <time></time>
+        <div id="container">Loading ...</div>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
 
-		// creating a new websocket
-	  	var socket = io.connect('http://localhost:8000');
-	  	// on message recived we print the new data inside the #container div
-	  	socket.on('notification', function (data) {
-		var usersList = "<dl>";
-		$.each(data.users,function(index,user){
-			usersList += "<dt>" + user.user_name + "</dt>\n" +
-						 "<dd>" + user.user_description + "\n" +
-								"<figure> <img class='img-polaroid' width='50px' src='" + user.user_img + "' /></figure>" 
-						 "</dd>";
-		});
-		usersList += "</dl>";
-		$('#container').html(usersList);
-	
-		$('time').html('Last Update:' + data.time);
-	  });
-	</script>
-	</body>
+        // create a new websocket
+        var socket = io.connect('http://localhost:8000');
+        // on message received we print all the data inside the #container div
+        socket.on('notification', function (data) {
+        var usersList = "<dl>";
+        $.each(data.users,function(index,user){
+            usersList += "<dt>" + user.user_name + "</dt>\n" +
+                         "<dd>" + user.user_description + "\n" +
+                            "<figure> <img class='img-polaroid' width='50px' src='" + user.user_img + "' /></figure>"
+                         "</dd>";
+        });
+        usersList += "</dl>";
+        $('#container').html(usersList);
+   
+        $('time').html('Last Update:' + data.time);
+      });
+    </script>
+    </body>
 </html>
