@@ -16,7 +16,9 @@ var app = require('http').createServer(handler),
 // If there is an error connecting to the database
 connection.connect(function(err) {
   // connected! (unless `err` is set)
-  console.log(err);
+  if (err) {
+    console.log(err);
+  }
 });
 
 // creating the server ( localhost:8000 )
@@ -63,14 +65,18 @@ var pollingLoop = function() {
     .on('end', function() {
       // loop on itself only if there are sockets still connected
       if (connectionsArray.length) {
+
         pollingTimer = setTimeout(pollingLoop, POLLING_INTERVAL);
 
         updateSockets({
           users: users
         });
+      } else {
+
+        console.log('The server timer was stopped because there are no more socket connections on the app')
+
       }
     });
-
 };
 
 
@@ -85,8 +91,8 @@ io.sockets.on('connection', function(socket) {
 
   socket.on('disconnect', function() {
     var socketIndex = connectionsArray.indexOf(socket);
-    console.log('socket = ' + socketIndex + ' disconnected');
-    if (socketIndex >= 0) {
+    console.log('socketID = %s got disconnected', socketIndex);
+    if (~socketIndex) {
       connectionsArray.splice(socketIndex, 1);
     }
   });
@@ -99,8 +105,11 @@ io.sockets.on('connection', function(socket) {
 var updateSockets = function(data) {
   // adding the time of the last update
   data.time = new Date();
+  console.log('Pushing new data to the clients connected ( connections amount = %s ) - %s', connectionsArray.length , data.time);
   // sending new data to all the sockets connected
   connectionsArray.forEach(function(tmpSocket) {
     tmpSocket.volatile.emit('notification', data);
   });
 };
+
+console.log('Please use your browser to navigate to http://localhost:8000');
