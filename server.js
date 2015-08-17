@@ -6,7 +6,7 @@ var app = require('http').createServer(handler),
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'root',
+    password: '',
     database: 'nodejs',
     port: 3306
   }),
